@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'flats/index'
-  get 'flats/show'
-  get 'flats/new'
-  get 'flats/create'
-  get 'flats/edit'
-  get 'flats/update'
-  get 'flats/destroy'
   root to: 'pages#home'
+  resources :flats
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
