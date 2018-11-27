@@ -7,6 +7,7 @@
 
     <%= link_to "Add a review", new_flat_review_path(@flat), class: 'btn btn-primary' %>
     <%= link_to 'Edit your flat', edit_flat_path, class: 'btn btn-primary' %>
+    <%= link_to 'Book this Flat', flat_bookings_path(@flat), class: 'btn btn-primary' %>
 
     <div class="img">
       <% unless @flat.photo.blank? %>
