@@ -1,8 +1,8 @@
 
-<h1> Voici la liste des reviews associées à <%= @flat.name %></h1>
-
+<h1> Voici la liste des reviews associées </h1>
 <ul>
-  <% @reviews.each do |review| %>
-    <li> <%= review.content %> | <%= review.rating %> </li>
-  <% end %>
+<% @reviews.each do |review| %>
+   <li> <%= review.content%> </li>
+    <% end %>
+
 </ul>

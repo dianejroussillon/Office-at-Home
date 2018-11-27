@@ -29,6 +29,19 @@
         </div>
       </div>
 
+      <div class="row row-condensend space-4">
+        <div class="text-right col-sm-3">
+          <p>Reviews</p>
+        </div>
+        <div class="text-left col-sm-9">
+          <ul>
+            <% @flat.reviews.each do |review| %>
+              <li> <%= review.content %> | <%= review.rating %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
     </div>
     <div class="img">
       <% unless @flat.photo.blank? %>
@@ -36,10 +49,8 @@
       <% end %>
     </div>
   </div>
+
   <div class="third-container">
-    <div class="col">
-      <%= link_to "Add a review", new_flat_review_path(@flat), class: 'btn btn-primary' %>
-    </div>
     <div class="col">
       <%= link_to 'Edit your flat', edit_flat_path, class: 'btn btn-primary' %>
     </div>
