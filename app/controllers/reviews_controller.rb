@@ -13,19 +13,20 @@ class ReviewsController < ApplicationController
     @flat = Flat.find(params[:flat_id])
     @review = Review.new(review_params)
     @review.flat = @flat
-    if @review.valid?
-      @review.save
-      redirect_to flat_reviews_path(@flat)
-    else
-      render :new
-    end
+    @review.save!
+    # if @review.valid?
+    #   @review.save
+    #   redirect_to flat_reviews_path(params[:flat_id])
+    # else
+    #   render :new
+    # end
 
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to flat_reviews_path(@flat)
+    redirect_to flat_reviews_path(params[:flat_id])
   end
 
   private
