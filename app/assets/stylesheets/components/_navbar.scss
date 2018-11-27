@@ -10,6 +10,12 @@
   justify-content: space-between;
 }
 
+.sticky {
+  width: 100%;
+  top: 0;
+  position: fixed;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
