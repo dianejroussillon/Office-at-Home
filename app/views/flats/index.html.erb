@@ -5,26 +5,30 @@
   </div>
 </div>
 
-<div class="container">
+<div class="main-container">
     <h1>All the flats</h1>
   <div class="card-container">
 
     <% @flats.each do |flat| %>
     <% if flat.photo.blank? %>
 
-        <div class="card" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('https://picsum.photos/300/300/?random');">
-          <div class="title-content"><% flat.name %>
-            <h3><%= link_to flat.name, flat_path(flat) %></h3>
+        <%= link_to flat_path(flat), :class => "link" do %>
+          <div class="card" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('https://picsum.photos/300/300/?random');">
+            <div class="title-content"><% flat.name %>
+              <h3><%= flat.name %></h3>
+            </div>
           </div>
-        </div>
+        <% end %>
 
        <% else %>
 
-        <div class="card" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.50)), url('<%= cl_image_path flat.photo %>');">
-          <div class="title-content">
-            <h3><%= link_to flat.name, flat_path(flat) %></h3>
+        <%= link_to flat_path(flat), :class => "link" do %>
+          <div class="card" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.50)), url('<%= cl_image_path flat.photo %>');">
+            <div class="title-content">
+              <h3><%= flat.name %></h3>
+            </div>
           </div>
-        </div>
+        <% end %>
 
       <% end %>
     <% end %>
