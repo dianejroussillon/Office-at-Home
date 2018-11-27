@@ -1,0 +1,32 @@
+.btn.btn-primary {
+  background-color: rgba(255, 218, 68, 0.8);
+  border-color: rgba(255, 218, 68, 0.8);
+  box-shadow: 0 10px 30px 0 rgba(255, 218, 68, 0.3);
+  color: rgba(128, 128, 128, 1);
+  margin: 0px !important;
+}
+
+
+.btn {
+  border: 1px solid transparent;
+  display: inline-block;
+  font-size: 14px !important;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 1.25em 3.25em;
+  text-align: center;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.third-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
