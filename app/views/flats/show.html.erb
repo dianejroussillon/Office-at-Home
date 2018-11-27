@@ -1,2 +1,11 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<h1><%= @flat.name %> </h1>
+<p> <%= @flat.address %> </p>
+<p> <%= @flat.description %> </p>
+<p> <%= @flat.price_per_day %> </p>
+
+<p> <%= link_to 'Back to List', flats_path %> </p>
+ <p> <%= link_to 'Edit your flat', edit_flat_path %> </p>
+
+ <%= f.submit class: 'btn btn-primary' %>
+
+
