@@ -15,7 +15,7 @@ london = Flat.create!(
   description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
   price_per_day: 75,
   user: diane
-  )
+)
 
 paris = Flat.create!(
   name: 'small but nice flat Paris',
@@ -23,7 +23,7 @@ paris = Flat.create!(
   description: 'super endroit pour des vacs',
   price_per_day: 90,
   user: patience
-  )
+)
 
 nantes = Flat.create!(
   name: 'Vieille grotte pourrie Nantes',
@@ -31,7 +31,7 @@ nantes = Flat.create!(
   description: 'appartement pourri sans vue et sans fenêtre',
   price_per_day: 15,
   user: jules
-  )
+)
 
 montmartre = Flat.create!(
   name: 'Hôtel Particulier Montmartre',
@@ -39,4 +39,4 @@ montmartre = Flat.create!(
   description: 'petit cocon',
   price_per_day: 100,
   user: abdel
-  )
+)
