@@ -1,1 +1,10 @@
-<h1>zrlg,emùth,</h1>
+<h1><%=  %></h1>
+
+
+<%= simple_form_for @bookings do |f| %>
+  <%= f.input :starting_date %>
+  <%= f.input :ending_date %>
+  <%= f.submit "add a booking", class: "btn btn-primary" %>
+<% end %>
+
+
