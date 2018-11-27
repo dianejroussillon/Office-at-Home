@@ -3,7 +3,7 @@
   border-color: rgba(255, 218, 68, 0.8);
   box-shadow: 0 10px 30px 0 rgba(255, 218, 68, 0.3);
   color: rgba(128, 128, 128, 1);
-  margin: 0px !important;
+  margin: 10px !important;
 }
 
 
@@ -21,6 +21,7 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  width: 180px;
 }
 
 .third-container {
@@ -29,4 +30,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.btn:hover {
+  opacity: 0.6;
+  z-index: 12;
+  text-decoration: none !important;
 }
