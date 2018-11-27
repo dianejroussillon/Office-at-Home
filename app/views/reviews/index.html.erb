@@ -1,6 +1,7 @@
 
 <h1> Voici la liste des reviews associées à <%= @flat.name %></h1>
 
+
 <ul>
   <% @flat.reviews.each do |review| %>
     <li> <%= review.content %> | <%= review.rating %>  <%= link_to flat_review_path(@flat, review), method: :delete, data: { confirm: "Are you sure?" } do %>
@@ -9,3 +10,4 @@
     </li>
   <% end %>
 </ul>
+
