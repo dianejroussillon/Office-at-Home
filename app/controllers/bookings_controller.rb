@@ -1,7 +1,4 @@
 class BookingsController < ApplicationController
-
-
-
   def index
     @bookings = Booking.all
   end
@@ -19,6 +16,7 @@ class BookingsController < ApplicationController
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new(booking_params)
     @booking.flat = @flat
+
     @booking.user = current_user
     if @booking.save!
       redirect_to flat_path(@flat)
