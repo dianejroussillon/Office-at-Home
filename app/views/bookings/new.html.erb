@@ -1,0 +1,18 @@
+<h1>Book your dates</h1>
+
+
+<h2><%= @flat.name %></h2>
+
+<div class="container">
+  <%= simple_form_for [@flat, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "BOOK", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+
+
+
+
+
