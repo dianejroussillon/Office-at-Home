@@ -1,0 +1,75 @@
+[1mdiff --git a/app/controllers/application_controller.rb b/app/controllers/application_controller.rb[m
+[1mindex 09705d1..6b4dcfa 100644[m
+[1m--- a/app/controllers/application_controller.rb[m
+[1m+++ b/app/controllers/application_controller.rb[m
+[36m@@ -1,2 +1,3 @@[m
+ class ApplicationController < ActionController::Base[m
+[32m+[m[32m  before_action :authenticate_user![m
+ end[m
+[1mdiff --git a/app/controllers/bookings_controller.rb b/app/controllers/bookings_controller.rb[m
+[1mindex d9ec141..c80eb5e 100644[m
+[1m--- a/app/controllers/bookings_controller.rb[m
+[1m+++ b/app/controllers/bookings_controller.rb[m
+[36m@@ -1,7 +1,4 @@[m
+ class BookingsController < ApplicationController[m
+[31m-[m
+[31m-[m
+[31m-[m
+   def index[m
+     @bookings = Booking.all[m
+   end[m
+[36m@@ -19,6 +16,7 @@[m [mclass BookingsController < ApplicationController[m
+     @flat = Flat.find(params[:flat_id])[m
+     @booking = Booking.new(booking_params)[m
+     @booking.flat = @flat[m
+[32m+[m
+     @booking.user = current_user[m
+     if @booking.save![m
+       redirect_to flat_path(@flat)[m
+[1mdiff --git a/app/controllers/pages_controller.rb b/app/controllers/pages_controller.rb[m
+[1mindex 45f463e..78aea71 100644[m
+[1m--- a/app/controllers/pages_controller.rb[m
+[1m+++ b/app/controllers/pages_controller.rb[m
+[36m@@ -1,4 +1,6 @@[m
+ class PagesController < ApplicationController[m
+[32m+[m[32m  skip_before_action :authenticate_user!, only: :home[m
+[32m+[m
+   def home[m
+   end[m
+ end[m
+[1mdiff --git a/app/models/booking.rb b/app/models/booking.rb[m
+[1mindex 54cc338..21e74a0 100644[m
+[1m--- a/app/models/booking.rb[m
+[1m+++ b/app/models/booking.rb[m
+[36m@@ -1,6 +1,4 @@[m
+ class Booking < ApplicationRecord[m
+   belongs_to :user[m
+   belongs_to :flat[m
+[31m-  validates_format_of :start_date, :with => /\d{2}\/\d{2}\/\d{4}/, :message => "^Date must be in the following format: mm/dd/yyyy", presence: true[m
+[31m-  validates_format_of :end_date, :with => /\d{2}\/\d{2}\/\d{4}/, :message => "^Date must be in the following format: mm/dd/yyyy", presence: true[m
+ end[m
+[1mdiff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb[m
+[1mindex 6569953..655d742 100644[m
+[1m--- a/app/views/layouts/application.html.erb[m
+[1m+++ b/app/views/layouts/application.html.erb[m
+[36m@@ -11,6 +11,7 @@[m
+   </head>[m
+   <body>[m
+     <%= render 'shared/navbar' %>[m
+[32m+[m[32m    <%= render 'shared/flashes' %>[m
+     <%= yield %>[m
+     <%= javascript_include_tag 'application' %>[m
+     <%= javascript_pack_tag 'application' %>[m
+[1mdiff --git a/config/initializers/devise.rb b/config/initializers/devise.rb[m
+[1mindex 29a770d..c19de40 100644[m
+[1m--- a/config/initializers/devise.rb[m
+[1m+++ b/config/initializers/devise.rb[m
+[36m@@ -19,7 +19,7 @@[m [mDevise.setup do |config|[m
+   # note that it will be overwritten if you use your own mailer class[m
+   # with default "from" parameter.[m
+ [m
+[31m-  config.mailer_sender = 'bob.eponge@example.com'[m
+[32m+[m[32m  config.mailer_sender = 'hello@office-at-home.com'[m
+ [m
+   # Configure the class responsible to send e-mails.[m
+   # config.mailer = 'Devise::Mailer'[m
