@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(181, 205, 209, 0.15);
+  background-color: rgba(237, 219, 200, 0.1);
 }
 
 
@@ -17,10 +17,54 @@ h3 {
   text-align: center;
 }
 
+.container {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: rgb(128, 128, 128);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 50%;
+}
+
 .second-container {
   margin-top : 80px;
+  text-align: center;
+  background-color: white;
+  border: 2px gray solid;
+  padding: 20px;
+  margin-left: 0px;
+  margin-bottom: 30px;
+  margin-right: 0px;
+
+}
+
+.panel-body {
+  padding: 20px;
+}
+
+.second-container p {
+  margin-bottom: 0px !important;
+}
+
+.row.row-condensend {
+  margin-left: -6px;
+  margin-right: -6px;
+  margin-bottom: 24px;
+  color: rgb(78, 78, 78);
+}
+
+.col-sm-9 {
+  border: 1px rgba(128, 128, 128, 0.6) solid;
+  padding: 10px 8px;
+  border-radius: 3px;
+}
+
+.col-sm-3 {
+  padding: 10px 8px;
 }
 
 .link {
   text-decoration: none !important;
 }
+
