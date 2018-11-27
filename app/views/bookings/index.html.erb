@@ -3,8 +3,8 @@
 
 <ul>
   <% @bookings.each do |booking| %>
-  <li><%= booking.start_date %>|<%= booking.end_date %><%= link_to "delete", flat_booking_path(@flat,booking), method: :delete, data: { confirm: "Are u sure" } %></li>
+  <li><%= booking.start_date %>|<%= booking.end_date %><%= link_to "delete", flat_booking_path(@flat,booking), method: :delete, data: { confirm: "Are u sure" } %> <%= link_to "See the associated reviews", flat_booking_reviews_path(@flat, booking) %> <%= link_to "add a review", new_flat_booking_review_path(@flat, booking) %>  </li>
   <% end %>
 </ul>
 
-<p><%= link_to "add a booking", flat_bookings_path(@flat) %></p>
+<p><%= link_to "add a booking", new_flat_booking_path(@flat) %></p>
