@@ -1,0 +1,28 @@
+.banner {
+  color: rgb(66, 80, 87);
+  text-align: center;
+  height: 100vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to bottom, rgba(200, 200, 200, 0.3) 50%, rgba(280, 280, 280, 0.65) 80%), asset_url('work.png');
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: rgb(66, 80, 87);
+}
+.banner p {
+  font-size: 25px;
+  color: rgb(66, 80, 87);
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+
+.banner-content {
+
+margin-left: 150px;
+
+}
