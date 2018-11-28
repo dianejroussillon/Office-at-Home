@@ -56,15 +56,3 @@ montmartre = Flat.create!(
   price_per_day: 100,
   user: abdel
 )
-
-
-
-puts "Create Reviews"
-flat_1 = Flat.find(15)
-flat_2 = Flat.find(16)
-review_1 = Review.create(content: "un très bel appartement", rating: 5)
-review_2 = Review.create(content: "super hôte", rating: 4)
-review_1.flat = flat_1
-review_2.flat = flat_1
-review_3 = Review.create(content: "un super appart", rating: 5)
-review_3.flat = flat_2
