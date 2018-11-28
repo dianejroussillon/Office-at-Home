@@ -1,11 +1,14 @@
 <div class="container">
   <div class="second-container">
     <h1> Associated Reviews </h1>
+    <% if @reviews.empty? %>
+    <%= 'No reviews associated yet ...' %>
+    <% else %>
       <% @reviews.each do |review| %>
      <div class="row-condensed text-left">
       <span><em>"<%= review.content %>"</em></span><span id="stars"><%= '☆'*review.rating %></span>
        <% end %>
      </div>
+    <% end %>
   </div>
 </div>
-

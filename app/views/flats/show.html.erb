@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="row row-condensend space-4">
+      <div class="row">
         <div class="text-right col-sm-3">
           <p>Reviews</p>
         </div>
@@ -37,8 +37,8 @@
             <% @flat.reviews.each do |review| %>
         <div class="row-condensed">
           <span><em>"<%= review.content %>"</em></span><span id="stars"><%= '☆'*review.rating %></span>
-          <% end %>
         </div>
+          <% end %>
         </div>
       </div>
 
@@ -61,3 +61,4 @@
     </div>
   </div>
 </div>
+
