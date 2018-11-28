@@ -18,11 +18,13 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
     @flat = Flat.new(flat_params)
     @flat.user = current_user
+    authorize @flat
     if @flat.valid?
       @flat.save
       redirect_to flat_path(@flat)
@@ -46,6 +48,7 @@ class FlatsController < ApplicationController
   def destroy
     @flat = Flat.find(params[:id])
     @flat.destroy
+    authorize @flat
     redirect_to flats_path
   end
 
