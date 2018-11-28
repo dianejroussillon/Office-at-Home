@@ -1,14 +1,14 @@
 class FlatsController < ApplicationController
   def index
     @flats = policy_scope(Flat)
-    # @flats = Flat.where.not(latitude: nil, longitude: nil)
-    # @markers = @flats.map do |flat|
-    #   {
-    #     lng: flat.longitude,
-    #     lat: flat.latitude,
-    #     infoWindow: render_to_string(partial: "<info></info>window", locals: { flat: flat })
-    #   }
-    #   end
+    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @markers = @flats.map do |flat|
+      {
+        lng: flat.longitude,
+        lat: flat.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+      }
+      end
   end
 
   def show
@@ -55,6 +55,6 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:name, :address, :description, :price_per_day, :photo)
+    params.require(:flat).permit(:name, :address, :description, :price_per_day, :photo, :feature)
   end
 end

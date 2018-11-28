@@ -24,16 +24,17 @@
   width: 180px;
 }
 
+
+.btn:hover {
+  opacity: 0.6;
+  z-index: 12;
+  text-decoration: none !important;
+}
+
 .third-container {
   width: 100%;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.btn:hover {
-  opacity: 0.6;
-  z-index: 12;
-  text-decoration: none !important;
 }
