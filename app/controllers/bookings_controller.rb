@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_flat
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).where(flat: @flat)
   end
 
   # def show
@@ -11,13 +11,14 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.flat = @flat
-
     @booking.user = current_user
+    authorize @booking
     if @booking.save!
       redirect_to flat_bookings_path(@flat)
     else
@@ -34,6 +35,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    authorize @booking
     redirect_to flat_bookings_path(@flat)
   end
 
