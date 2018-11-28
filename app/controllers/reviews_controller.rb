@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+  class ReviewsController < ApplicationController
   def index
     @reviews = Review.where(booking_id: params[:booking_id])
   end
@@ -27,5 +27,4 @@ class ReviewsController < ApplicationController
    def review_params
      params.require(:review).permit(:content, :rating)
    end
-
 end
