@@ -1,8 +1,11 @@
+<div class="container">
+  <div class="second-container">
+    <h1> Associated Reviews </h1>
+      <% @reviews.each do |review| %>
+     <div class="row-condensed text-left">
+      <span><em>"<%= review.content %>"</em></span><span id="stars"><%= '☆'*review.rating %></span>
+       <% end %>
+     </div>
+  </div>
+</div>
 
-<h1> Voici la liste des reviews associées </h1>
-<ul>
-<% @reviews.each do |review| %>
-   <li> <%= review.content%> </li>
-    <% end %>
-
-</ul>
