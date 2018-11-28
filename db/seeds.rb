@@ -13,7 +13,7 @@ puts 'Creating flats'
 
 
 flats_array =[]
-20.times do
+5.times do
   my_hash = {
     user: User.order("RANDOM()").first,
     name: Faker::Address.city,
