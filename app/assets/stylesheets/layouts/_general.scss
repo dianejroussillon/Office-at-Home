@@ -28,7 +28,8 @@ h3 {
 }
 
 .second-container {
-  margin-top : 80px;
+  width: 100%;
+  margin-top : 100px;
   text-align: center;
   background-color: white;
   border: 2px gray solid;
@@ -66,5 +67,24 @@ h3 {
 
 .link {
   text-decoration: none !important;
+}
+
+#no-border {
+  border: none !important;
+}
+
+
+input {
+  width: 100%;
+}
+
+label {
+  font-weight: normal !important;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  border: none;
 }
 

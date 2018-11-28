@@ -1,3 +1,5 @@
+require 'faker'
+
 Flat.destroy_all
 User.destroy_all
 puts 'Creating Users'
@@ -8,6 +10,20 @@ jules = User.create!(email: 'jules@gmail.com', password: 'julesbtx')
 abdel = User.create!(email: 'abdel@gmail.com', password: 'abdel21')
 
 puts 'Creating flats'
+
+
+flats_array =[]
+20.times do
+  my_hash = {
+    user: User.order("RANDOM()").first,
+    name: Faker::Add/bookingsress.city,
+    address: Faker::Address.full_address,
+    description: Faker::Lorem.paragraph_by_chars(rand(250..500), false),
+    price_per_day: rand(50..200)
+  }
+  flats_array << my_hash
+end
+Flat.create!(flats_array)
 
 london = Flat.create!(
   name: 'Light & Spacious Garden Flat London',
@@ -40,4 +56,3 @@ montmartre = Flat.create!(
   price_per_day: 100,
   user: abdel
 )
-

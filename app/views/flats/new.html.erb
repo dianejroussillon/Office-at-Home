@@ -1,16 +1,73 @@
 <div class="container">
   <div class="second-container">
-    <h1> Veuillez créer un nouvel appartement </h1>
-
-    <%= simple_form_for @flat do |f| %>
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :description %>
-      <%= f.input :price_per_day %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.submit "Add a flat", class: "btn btn-primary" %>
-    <% end %>
-
+    <h1> Please enter information </h1>
+    <div class="panel-body">
+      <form class="simple_form new_flat" id="new_flat" novalidate="novalidate" enctype="multipart/form-data" action="/flats" accept-charset="UTF-8" method="post">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="authenticity_token" value="aUerpUAWOnQeXh19T6M28ZZWTmDuXk0FCC6BRe+kTW47h3SBY/o+pqzdAH0lKlSpckEwZlcQSF9iw6fV3iG+NQ==" />
+        <div class="form-group string required flat_name">
+          <div class="row row-condensend space-4">
+            <div class="text-right col-sm-3">
+              <label class="form-control-label string required" for="flat_name">Name <abbr title="required">*</abbr>
+              </label>
+            </div>
+            <div class="text-left col-sm-9" id="no-border">
+             <input class="form-control string required" type="text" name="flat[name]" id="flat_name" />
+           </div>
+          </div>
+        </div>
+        <div class="form-group string required flat_address">
+          <div class="row row-condensend space-4">
+            <div class="text-right col-sm-3">
+              <label class="form-control-label string required" for="flat_address">Address <abbr title="required">*</abbr>
+              </label>
+            </div>
+            <div class="text-left col-sm-9" id="no-border">
+              <input class="form-control string required" type="text" name="flat[address]" id="flat_address" />
+           </div>
+          </div>
+        </div>
+        <div class="form-group text optional flat_description">
+          <div class="row row-condensend space-4">
+            <div class="text-right col-sm-3">
+               <label class="form-control-label text optional" for="flat_description">Description</label>
+            </div>
+            <div class="text-left col-sm-9" id="no-border">
+              <textarea class="form-control text optional" name="flat[description]" id="flat_description">
+              </textarea>
+           </div>
+          </div>
+        </div>
+        <div class="form-group integer optional flat_price_per_day">
+          <div class="row row-condensend space-4">
+            <div class="text-right col-sm-3">
+               <label class="form-control-label integer optional" for="flat_price_per_day">Price per day</label>
+            </div>
+            <div class="text-left col-sm-9" id="no-border">
+              <input class="form-control numeric integer optional" type="number" step="1" name="flat[price_per_day]" id="flat_price_per_day" />
+           </div>
+          </div>
+        </div>
+        <div class="form-group file optional flat_photo">
+          <div class="row row-condensend space-4">
+            <div class="text-right col-sm-3">
+              <label class="file optional" for="flat_photo">Photo</label>
+            </div>
+            <div class="text-left col-sm-9" id="no-border">
+              <input class="form-control-file file optional" type="file" name="flat[photo]" id="flat_photo" />
+           </div>
+          </div>
+        </div>
+        <div class="form-group hidden flat_photo_cache">
+          <input class="form-control hidden" type="hidden" name="flat[photo_cache]" id="flat_photo_cache" />
+        </div>
+    </div>
   </div>
+  <div class="third-container">
+    <div class="col">
+      <input type="submit" name="commit" value="Add a flat" class="btn btn-primary" data-disable-with="Add a flat" />
+    </div>
+</form>  </div>
 </div>
+
+
