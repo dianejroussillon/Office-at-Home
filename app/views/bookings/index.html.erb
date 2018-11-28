@@ -1,11 +1,11 @@
 <div class="container">
   <div class="second-container">
     <h1>Bookings of <%= @flat.name %></h1>
-    <ul>
       <% @bookings.each do |booking| %>
-      <li><%= booking.start_date %>|<%= booking.end_date %><%= link_to "delete", flat_booking_path(@flat,booking), method: :delete, data: { confirm: "Are u sure" } %> <%= link_to "See the associated reviews", flat_booking_reviews_path(@flat, booking) %> <%= link_to "add a review", new_flat_booking_review_path(@flat, booking) %>  </li>
-      <% end %>
-    </ul>
+      <div class="row row-condensed">
+          <span class="text-left bookings"><%= booking.start_date %>|<%= booking.end_date %><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, flat_booking_path(@flat,booking), method: :delete, data: { confirm: "Are you sure" } %></span><span class="text-right bookings"><%= 'Reviews associated' %><%= link_to '<i class="fas fa-eye"></i>'.html_safe, flat_booking_reviews_path(@flat, booking) %> <%= link_to '<i class="fas fa-plus"></i>'.html_safe, new_flat_booking_review_path(@flat, booking) %></span>
+         <% end %>
+      </div>
   </div>
   <div class="third-container">
     <p><%= link_to "add a booking", new_flat_booking_path(@flat), class: 'btn btn-primary' %></p>
