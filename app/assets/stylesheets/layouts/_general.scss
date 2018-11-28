@@ -8,6 +8,8 @@ h1 {
   color: rgb(66, 80, 87);
   font-size: bold;
   padding: 5px 0px;
+  margin: 20px 0px !important;
+  font-size: 30px;
 }
 
 h3 {
@@ -88,3 +90,16 @@ textarea {
   border: none;
 }
 
+a {
+  color: rgb(128, 128, 128) !important;
+}
+
+.bookings {
+  padding: 10px;
+}
+
+.fas {
+  padding: 0px 15px;
+  font-size: 15px;
+  color: rgb(255, 152, 17);
+}

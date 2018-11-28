@@ -1,18 +1,19 @@
 class FlatsController < ApplicationController
   def index
-    @flats = Flat.all
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
-    @markers = @flats.map do |flat|
-      {
-        lng: flat.longitude,
-        lat: flat.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
-      }
-      end
+    @flats = policy_scope(Flat)
+    # @flats = Flat.where.not(latitude: nil, longitude: nil)
+    # @markers = @flats.map do |flat|
+    #   {
+    #     lng: flat.longitude,
+    #     lat: flat.latitude,
+    #     infoWindow: render_to_string(partial: "<info></info>window", locals: { flat: flat })
+    #   }
+    #   end
   end
 
   def show
     @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def new
@@ -32,11 +33,13 @@ class FlatsController < ApplicationController
 
   def edit
     @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def update
     @flat = Flat.find(params[:id])
     @flat.update(flat_params)
+    authorize @flat
     redirect_to flats_path(@flat)
   end
 
