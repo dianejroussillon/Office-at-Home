@@ -3,7 +3,12 @@ class FlatsController < ApplicationController
 
   def index
     @flats = policy_scope(Flat)
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
+     if params[:query].present?
+      @flats = Flat.search_by_name_and_address(params[:query])
+    else
+       @flats = policy_scope(Flat)
+    end
+    @flats = @flats.where().not(latitude: nil, longitude: nil)
     @markers = @flats.map do |flat|
       {
         lng: flat.longitude,
@@ -29,7 +34,7 @@ class FlatsController < ApplicationController
     authorize @flat
     if @flat.valid?
       @flat.save
-      redirect_to flat_path(@flat)
+      redirect_to flats_path
     else
       render :new
     end

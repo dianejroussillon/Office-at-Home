@@ -21,6 +21,8 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'faker'
 gem "geocoder"
 gem "pundit"
+gem 'pg_search'
+
 
 
 group :development do

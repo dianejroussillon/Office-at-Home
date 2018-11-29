@@ -5,6 +5,17 @@
   </div>
 </div>
 
+
+
+<%= form_tag flats_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a flat"
+  %>
+<% end %>
+
+
 <div class="main-container">
     <h1 style="font-size: 50px;">All the flats</h1>
   <div class="card-container">
