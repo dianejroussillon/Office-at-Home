@@ -19,40 +19,72 @@
 </div>
 
 <div class="main-container">
-    <h1 style="font-size: 50px;">All the flats</h1>
+  <h1 style="font-size: 50px;">All the flats</h1>
   <div class="card-container">
 
     <% @flats.each do |flat| %>
-    <% if flat.photo.blank? %>
+     <% if flat.photo.blank? %>
 
-        <%= link_to flat_path(flat), :class => "link" do %>
-          <div class="card" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('https://picsum.photos/300/300/?random');">
-            <div class="title-content"><% flat.name %>
-              <h3 style="color: rgb(253, 251, 249);"><%= flat.name %></h3>
+        <div class ="row row-condensend">
+          <div class="col-4">
+            <%= link_to flat_path(flat), :class => "link" do %>
+              <div class="card">
+                <div class ="card-image" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('https://picsum.photos/300/300/?random');">
+                </div>
+                  <div class="card-content"><% flat.name %>
+                    <h5 style="color: rgb(253, 251, 249);"><%= flat.name %></h5>
+                    <p><%= flat.address %></p>
+                  </div>
+                  <hr>
+                  <div class="price">
+                    <p><%= flat.price_per_day %><%= '€ /day' %></p>
+                  </div>
+                  <div class="last-container">
+                  </div>
+              <% end %>
             </div>
           </div>
-        <% end %>
+        </div>
 
-       <% else %>
+      <% else %>
 
-        <%= link_to flat_path(flat), :class => "link" do %>
-          <div class="card" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.50)), url('<%= cl_image_path flat.photo %>');">
-            <div class="title-content">
-              <h3><%= flat.name %></h3>
-            </div>
+        <div class ="row row-condensend">
+          <div class="col-4">
+            <%= link_to flat_path(flat), :class => "link" do %>
+              <div class="card">
+                <div class ="card-image" style="background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('<%= cl_image_path flat.photo %>');">
+                </div>
+                    <div class="card-content"><% flat.name %>
+                      <div class="card-title">
+                        <h5 style="color: rgb(253, 251, 249);"><%= flat.name %></h5>
+                      </div>
+                        <p><%= flat.address %></p>
+                    </div>
+                    <hr>
+                     <div class="price">
+                        <p><%= flat.price_per_day %><%= '€ /day' %></p>
+                      </div>
+                    <hr>
+                    <div class="last-container">
+                    </div>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-
-      <% end %>
+        </div>
+      <%end %>
     <% end %>
 
-<div
-  id="map"
-  style="width: 80%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
 
+    <div
+      id="map"
+      style="width: 80%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
   </div>
 </div>
+
+
+
+
