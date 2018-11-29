@@ -11,14 +11,14 @@
          <%= text_field_tag :query, params[:query], class: "form-control ", placeholder: "Location"%>
        </div>
        <div class="text-left col-sm-5">
-         <%= submit_tag("Search", :class => "btn btn-success") %>
+         <%= submit_tag("Search", :class => "btn btn-success", :id => "search-input") %>
        </div>
       <% end %>
     </div>
   </div>
 </div>
 
-<div class="main-container">
+<div class="main-container" id="cards">
   <h1 style="font-size: 50px;">All the flats</h1>
   <div class="card-container">
 
@@ -67,7 +67,7 @@
     <div
       id="map"
       style="width: 80%;
-      height: 600px;"
+      height: 500px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>

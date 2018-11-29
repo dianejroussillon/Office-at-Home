@@ -12,3 +12,12 @@ import "../plugins/flatpickr";
 
 initMapbox();
 console.log('Hello World from Webpacker');
+
+const searchBar = document.getElementById("search-input")
+const searchResult = document.getElementById("cards")
+
+if (searchBar) {
+  searchBar.addEventListener('click', event => {
+    searchResult.scrollIntoView({ block: 'start',  behavior: 'smooth' });
+  })
+}

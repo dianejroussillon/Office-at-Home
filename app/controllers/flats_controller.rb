@@ -5,6 +5,7 @@ class FlatsController < ApplicationController
     @flats = policy_scope(Flat)
      if params[:query].present?
       @flats = Flat.search_by_name_and_address(params[:query])
+      # redirect_to flats_path(anchor: 'cards')
     else
        @flats = policy_scope(Flat)
     end
