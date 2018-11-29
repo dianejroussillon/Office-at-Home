@@ -11,14 +11,14 @@
          <%= text_field_tag :query, params[:query], class: "form-control ", placeholder: "Location"%>
        </div>
        <div class="text-left col-sm-5">
-         <%= submit_tag("Search", :class => "btn btn-success") %>
+         <a href="#cards"><%= submit_tag("Search", :class => "btn btn-success") %></a>
        </div>
       <% end %>
     </div>
   </div>
 </div>
 
-<div class="main-container">
+<div class="main-container" id="cards">
   <h1 style="font-size: 50px;">All the flats</h1>
   <div class="card-container">
 
