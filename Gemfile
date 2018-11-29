@@ -22,6 +22,7 @@ gem 'faker'
 gem "geocoder"
 gem "pundit"
 gem 'pg_search'
+gem 'bootstrap-datepicker-rails'
 
 
 
