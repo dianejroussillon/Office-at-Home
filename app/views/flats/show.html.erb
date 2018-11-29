@@ -25,7 +25,43 @@
           <p><strong>Feature</strong></p>
         </div>
         <div class="text-left col-sm-9" id="no-border">
-          <p> <%= @flat.feature %> </p>
+          <% if @flat.wifi %>
+            <i class="fas fa-wifi"></i>
+              <p> Wifi</p>
+            <% end %>
+            <% if @flat.meeting_room %>
+              <p> Salle de réunion </p>
+            <% end %>
+            <% if @flat.projector %>
+              <p> Projector </p>
+            <% end %>
+            <% if @flat.screen %>
+              <p> TV Screen </p>
+            <% end %>
+            <% if @flat.speaker %>
+              <p> Loud speaker </p>
+            <% end %>
+            <% if @flat.games %>
+            <i class="fas fa-gamepad"></i>
+              <p> Video games </p>
+            <% end %>
+            <% if @flat.storage %>
+              <p> Place for storage </p>
+            <% end %>
+            <% if @flat.coffee %>
+            <i class="fas fa-coffee"></i>
+              <p> Coffee machine</p>
+            <% end %>
+            <% if @flat.teapot %>
+              <p> Teapot </p>
+            <% end %>
+            <% if @flat.kitchen %>
+              <p> Kitchen </p>
+            <% end %>
+            <% if @flat.printer %>
+            <i class="fas fa-print"></i>
+              <p> Printer </p>
+            <% end %>
         </div>
       </div>
 
