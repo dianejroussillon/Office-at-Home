@@ -1,7 +1,7 @@
 import "bootstrap";
 
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
+
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
@@ -10,7 +10,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import "../plugins/flatpickr";
 
 const startDate = document.getElementById("booking_start_date")
-
 const endDate = document.getElementById("booking_end_date")
 
 endDate.addEventListener("change", (event) => {
@@ -25,6 +24,11 @@ console.log('Hello World from Webpacker');
 
 const searchBar = document.getElementById("search-input")
 const searchResult = document.getElementById("cards")
+const searchBanner = document.getElementById("banner-id")
+
+if (searchBanner) {
+  loadDynamicBannerText();
+}
 
 if (searchBar) {
   searchBar.addEventListener('click', event => {
