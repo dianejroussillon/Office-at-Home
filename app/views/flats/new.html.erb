@@ -46,17 +46,19 @@
             <div class="text-left col-sm-9" id="no-border">
               <input class="form-control numeric integer optional" type="number" step="1" name="flat[price_per_day]" id="flat_price_per_day" />
            </div>
-          </div>
-        </div>
-        <div class="form-group integer optional flat_feature">
-          <div class="row row-condensend space-4">
-            <div class="text-right col-sm-3">
-               <label class="form-control-label integer optional" for="flat_feature">Feature</label>
+
+          <div class="text-right col-sm-3">
+              <label class="form-control-label string required" for="flat_address">Feature <abbr title="required">*</abbr>
+              </label>
             </div>
             <div class="text-left col-sm-9" id="no-border">
-              <textarea class="form-control text optional" name="flat[feature]" id="flat_feature">
-              </textarea>
+              <input type="checkbox" name="flat[feature][]" value="Rétroprojecteur" /> Rétroprojecteur
+              <input type="checkbox" name="flat[feature][]" value="Salle de réunion" /> Salle de réunion
+              <input type="checkbox" name="flat[feature][]" value="wifi haut-débit" /> Wifi haut-débit
            </div>
+
+        <div class="form-group integer optional flat_feature">
+          <div class="row row-condensend space-4">
           </div>
         </div>
         <div class="form-group file optional flat_photo">
@@ -74,6 +76,8 @@
         </div>
     </div>
   </div>
+
+
   <div class="third-container">
     <div class="col">
       <input type="submit" name="commit" value="Add a flat" class="btn btn-primary" data-disable-with="Add a flat" />
