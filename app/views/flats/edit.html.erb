@@ -32,8 +32,10 @@
           <%= f.label :feature %>
         </div>
         <div class="text-left col-sm-9">
-          <% objects = ['wifi', 'tv', 'table'] %>
-          <%= f.check_box :feature, :collection => objects %>
+          <%= f.check_box :feature, :collection => objects %> Hello
+        </div>
+        <div class="text-left col-sm-9">
+          <%= f.check_box :feature, :collection => objects %> Hello
         </div>
       </div>
       <div class="row row-condensend space-4">

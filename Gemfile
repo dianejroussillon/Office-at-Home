@@ -25,7 +25,6 @@ gem 'pg_search'
 gem 'bootstrap-datepicker-rails'
 
 
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
