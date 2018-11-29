@@ -4,45 +4,81 @@
     <div class="panel-body">
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <p>Address</p>
+          <p><strong>Address</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240);">
+        <div class="text-left col-sm-9" id="no-border">
           <p> <%= @flat.address %></p>
         </div>
       </div>
 
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <p>Description</p>
+          <p><strong>Description</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240);">
+        <div class="text-left col-sm-9" id="no-border">
           <p> <%= @flat.description %> </p>
         </div>
       </div>
 
       <div class="row row-condensend space-4" style="text-align: center;">
         <div class="text-right col-sm-3">
-          <p>Feature</p>
+          <p><strong>Feature</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240); display: block;">
-          <p> <%= @flat.feature %> </p>
+        <div class="text-left col-sm-9" id="no-border">
+          <% if @flat.wifi %>
+            <i class="fas fa-wifi"></i>
+              <p> Wifi</p>
+            <% end %>
+            <% if @flat.meeting_room %>
+              <p> Salle de réunion </p>
+            <% end %>
+            <% if @flat.projector %>
+              <p> Projector </p>
+            <% end %>
+            <% if @flat.screen %>
+              <p> TV Screen </p>
+            <% end %>
+            <% if @flat.speaker %>
+              <p> Loud speaker </p>
+            <% end %>
+            <% if @flat.games %>
+            <i class="fas fa-gamepad"></i>
+              <p> Video games </p>
+            <% end %>
+            <% if @flat.storage %>
+              <p> Place for storage </p>
+            <% end %>
+            <% if @flat.coffee %>
+            <i class="fas fa-coffee"></i>
+              <p> Coffee machine</p>
+            <% end %>
+            <% if @flat.teapot %>
+              <p> Teapot </p>
+            <% end %>
+            <% if @flat.kitchen %>
+              <p> Kitchen </p>
+            <% end %>
+            <% if @flat.printer %>
+            <i class="fas fa-print"></i>
+              <p> Printer </p>
+            <% end %>
         </div>
       </div>
 
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <p>Price</p>
+          <p><strong>Price</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240);">
+        <div class="text-left col-sm-9" id="no-border">
           <p> <%= @flat.price_per_day %> <%= '€' %> </p>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <p>Reviews</p>
+          <p><strong>Reviews</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240);">
+        <div class="text-left col-sm-9" id="no-border">
             <% @flat.reviews.each do |review| %>
         <div class="row-condensed">
           <span><em>"<%= review.content %>"</em></span><span id="stars"><%= '☆'*review.rating %></span>

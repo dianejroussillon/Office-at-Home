@@ -1,2 +1,9 @@
-<h5><%= flat.name.capitalize %></h5>
-<p><%= flat.address %></p>
+<%= link_to flat_path(flat), :class => "link" do %>
+<div class="infowindow">
+  <h5><%= flat.name.capitalize %></h5>
+  <p><%= flat.address %></p>
+</div>
+<% end %>
+
+
+

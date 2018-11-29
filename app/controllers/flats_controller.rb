@@ -5,6 +5,7 @@ class FlatsController < ApplicationController
     @flats = policy_scope(Flat)
      if params[:query].present?
       @flats = Flat.search_by_name_and_address(params[:query])
+      # redirect_to flats_path(anchor: 'cards')
     else
        @flats = policy_scope(Flat)
     end
@@ -62,6 +63,6 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:name, :address, :description, :price_per_day, :photo, :feature)
+    params.require(:flat).permit(:name, :address, :description, :price_per_day, :photo, :feature, :wifi, :meeting_room, :projector, :screen, :speaker, :games, :storage, :coffee, :fridge, :teapot, :kitchen, :printer)
   end
 end

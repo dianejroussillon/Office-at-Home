@@ -1,17 +1,13 @@
-import "../plugins/flatpickr"
+import "bootstrap";
 
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
 
-/* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
-
-
-//recuperer le prix unitaire
+import 'mapbox-gl/dist/mapbox-gl.css';
+// internal imports
+import { initMapbox } from '../plugins/init_mapbox';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import "../plugins/flatpickr";
 
 const startDate = document.getElementById("booking_start_date")
 
@@ -24,19 +20,14 @@ endDate.addEventListener("change", (event) => {
   document.getElementById("price_per_day").innerText = `${(dateDiffInMilliseconds/ 86400000) * 75}€`
 });
 
+initMapbox();
+console.log('Hello World from Webpacker');
 
+const searchBar = document.getElementById("search-input")
+const searchResult = document.getElementById("cards")
 
-// Je recupere la date1
-// const dates = document.getElementsByClassName("form-control string optional datepicker flatpickr-input")
-// console.log(dates[0].value)
-
-
-
-// je recupere la date 2 et tu cree un objet Date avec JS
-
-
-// On soustrait la date 2 - date 1 + 1 multiplier par price perday
-
-
-
-// on affiche
+if (searchBar) {
+  searchBar.addEventListener('click', event => {
+    searchResult.scrollIntoView({ block: 'start',  behavior: 'smooth' });
+  })
+}
