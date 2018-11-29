@@ -34,13 +34,9 @@
                   <div class="card-content"><% flat.name %>
                     <h5 style="color: rgb(253, 251, 249);"><%= flat.name %></h5>
                     <p><%= flat.address %></p>
+                    <span><%= flat.price_per_day %><%= '€ /day' %></span>
                   </div>
-                  <hr>
-                  <div class="price">
-                    <p><%= flat.price_per_day %><%= '€ /day' %></p>
-                  </div>
-                  <div class="last-container">
-                  </div>
+                   <hr>
               <% end %>
             </div>
           </div>
@@ -54,19 +50,12 @@
               <div class="card">
                 <div class ="card-image" style="background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('<%= cl_image_path flat.photo %>');">
                 </div>
-                    <div class="card-content"><% flat.name %>
-                      <div class="card-title">
-                        <h5 style="color: rgb(253, 251, 249);"><%= flat.name %></h5>
-                      </div>
-                        <p><%= flat.address %></p>
-                    </div>
-                    <hr>
-                     <div class="price">
-                        <p><%= flat.price_per_day %><%= '€ /day' %></p>
-                      </div>
-                    <hr>
-                    <div class="last-container">
-                    </div>
+                <div class="card-content"><% flat.name %>
+                  <h5 style="color: rgb(253, 251, 249);"><%= flat.name %></h5>
+                  <p><%= flat.address %></p>
+                  <span><%= flat.price_per_day %><%= '€ /day' %></span>
+                </div>
+                <hr>
               </div>
             <% end %>
           </div>
