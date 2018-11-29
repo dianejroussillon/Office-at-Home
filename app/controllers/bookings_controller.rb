@@ -47,5 +47,6 @@ class BookingsController < ApplicationController
 
   def set_flat
     @flat = Flat.find(params[:flat_id])
+    @price = @flat.price_per_day
   end
 end
