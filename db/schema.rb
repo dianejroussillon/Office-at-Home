@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_134213) do
+ActiveRecord::Schema.define(version: 2018_11_29_154932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(version: 2018_11_28_134213) do
     t.float "latitude"
     t.float "longitude"
     t.string "feature"
+    t.boolean "wifi", default: false, null: false
+    t.boolean "meeting_room", default: false, null: false
+    t.boolean "projector", default: false, null: false
+    t.boolean "screen", default: false, null: false
+    t.boolean "speaker", default: false, null: false
+    t.boolean "games", default: false, null: false
+    t.boolean "storage", default: false, null: false
+    t.boolean "coffee", default: false, null: false
+    t.boolean "fridge", default: false, null: false
+    t.boolean "teapot", default: false, null: false
+    t.boolean "kitchen", default: false, null: false
+    t.boolean "printer", default: false, null: false
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
