@@ -4,45 +4,45 @@
     <div class="panel-body">
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <p>Address</p>
+          <p><strong>Address</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240);">
+        <div class="text-left col-sm-9" id="no-border">
           <p> <%= @flat.address %></p>
         </div>
       </div>
 
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <p>Description</p>
+          <p><strong>Description</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240);">
+        <div class="text-left col-sm-9" id="no-border">
           <p> <%= @flat.description %> </p>
         </div>
       </div>
 
       <div class="row row-condensend space-4" style="text-align: center;">
         <div class="text-right col-sm-3">
-          <p>Feature</p>
+          <p><strong>Feature</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240); display: block;">
+        <div class="text-left col-sm-9" id="no-border">
           <p> <%= @flat.feature %> </p>
         </div>
       </div>
 
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <p>Price</p>
+          <p><strong>Price</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240);">
+        <div class="text-left col-sm-9" id="no-border">
           <p> <%= @flat.price_per_day %> <%= '€' %> </p>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <p>Reviews</p>
+          <p><strong>Reviews</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border" style="background-color: rgb(240, 240, 240);">
+        <div class="text-left col-sm-9" id="no-border">
             <% @flat.reviews.each do |review| %>
         <div class="row-condensed">
           <span><em>"<%= review.content %>"</em></span><span id="stars"><%= '☆'*review.rating %></span>
