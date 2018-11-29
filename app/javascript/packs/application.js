@@ -1,7 +1,7 @@
 import "bootstrap";
 
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
+
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
@@ -10,8 +10,9 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import "../plugins/flatpickr";
 
 const startDate = document.getElementById("booking_start_date")
-
+console.log(startDate);
 const endDate = document.getElementById("booking_end_date")
+console.log(endtDate);
 
 endDate.addEventListener("change", (event) => {
   let dateDiffInMilliseconds = new Date(endDate.value) - new Date(startDate.value) + 86400000;
