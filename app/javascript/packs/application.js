@@ -18,7 +18,7 @@ const endDate = document.getElementById("booking_end_date");
 const choiceCategory = document.getElementById("choice-category")
 const editCategory = document.getElementById("edit-category") //class à rajotuer dans edit
 const heartActive = document.getElementById("card-container")
- 
+
 initMapbox();
 
 
@@ -39,7 +39,7 @@ if(endDate) {
   endDate.addEventListener("change", (event) => {
   let dateDiffInMilliseconds = new Date(endDate.value) - new Date(startDate.value) + 86400000;
   let days = dateDiffInMilliseconds / 86400000;
-  document.getElementById("days").innerText = `${days} jours`
+  document.getElementById("days").innerText = `${days} days`
   document.getElementById("price_per_day").innerText = `${(dateDiffInMilliseconds/ 86400000) * 75}€`
 });
 }
