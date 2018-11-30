@@ -6,17 +6,23 @@
 
 .category-choice {
     margin: 10px 10px;
-    background: rgb(234, 207, 119);
+    background: rgba(255, 218, 68, 0.8);
     padding: 15px;
     border-radius: 5px;
+    width: 100%;
     opacity: 0.7;
     text-align: center;
+    font-size: 14px;
+    color: black;
     &:hover {
-      opacity:1;
+      opacity: 1;
       cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
     }
     &.active {
-      color:white;
+      color: white;
+      font-size: 20px;
       opacity: 1;
     }
 }

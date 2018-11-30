@@ -135,5 +135,14 @@
      <%= link_to 'Book this Flat', flat_bookings_path(@flat), class: 'btn btn-primary' %>
     </div>
   </div>
+  <div class="fourth-container">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 400px;"
+      data-markers="<%= @marker.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+  </div>
 </div>
 

@@ -11,17 +11,22 @@ class FlatsController < ApplicationController
     end
     @flats = @flats.where().not(latitude: nil, longitude: nil)
     @markers = @flats.map do |flat|
-      {
-        lng: flat.longitude,
-        lat: flat.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
-      }
-      end
+    {
+      lng: flat.longitude,
+      lat: flat.latitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+    }
+    end
   end
 
   def show
     @flat = Flat.find(params[:id])
     authorize @flat
+    @marker = {
+        lng: @flat.longitude,
+        lat: @flat.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: @flat })
+    }
   end
 
   def new

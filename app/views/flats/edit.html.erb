@@ -27,35 +27,88 @@
           <%= f.text_area :description %>
         </div>
       </div>
+
+    <div class="form-group string required flat_feature">
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
-          <%= f.label :feature %>
+          <label class="form-control-label string required" for="flat_feature">Features <abbr title="required">*</abbr>
+          </label>
         </div>
-        <div class="text-left col-sm-9">
-          <% objects = ['wifi', 'tv', 'table'] %>
-          <%= f.check_box :feature, :collection => objects %>
+        <div class="categories-choices text-left col-sm-9" id="no-border">
+          <div class="form-group string required flat_feature" id="edit-category">
+            <div class="col-sm-4 text-center" style="height: 88px;">
+                <label for="wifi" class="category-choice">Wi-fi</label>
+                <input type="checkbox" class="hidden" id="wifi" name="flat[wifi]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="meeting-room" class="category-choice"> Meeting room</label>
+              <input type="checkbox" class="hidden" id="meeting-room" name="flat[meeting_room]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="screen" class="category-choice">TV screen</label>
+              <input type="checkbox" class="hidden" id="screen" name="flat[screen]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="projector" class="category-choice">Projector</label>
+              <input type="checkbox" class="hidden" id="projector" name="flat[projector]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="speaker" class="category-choice">Loud speaker</label>
+              <input type="checkbox" class="hidden" id="speaker" name="flat[speaker]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="games" class="category-choice">Video games</label>
+              <input type="checkbox" class="hidden" id="games" name="flat[games]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="storage" class="category-choice">Storage</label>
+              <input type="checkbox" class="hidden" id="storage" name="flat[storage]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="coffee" class="category-choice">Coffee</label>
+              <input type="checkbox" class="hidden" id="coffee" name="flat[coffee]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="fridge" class="category-choice">Fridge</label>
+              <input type="checkbox" class="hidden" id="fridge" name="flat[fridge]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="teapot" class="category-choice">Teapot</label>
+              <input type="checkbox" class="hidden" id="teapot" name="flat[teapot]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="kitchen" class="category-choice">Kitchen</label>
+              <input type="checkbox" class="hidden" id="kitchen" name="flat[kitchen]" value="true">
+            </div>
+            <div class="col-sm-4 text-center" style="height: 88px;">
+              <label for="printer" class="category-choice">Printer</label>
+              <input type="checkbox" class="hidden" id="printer" name="flat[printer]" value="true">
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row row-condensend space-4">
-        <div class="text-right col-sm-3">
-          <%= f.label :price_per_day %>
-        </div>
-        <div class="text-left col-sm-9">
-          <%= f.text_field :price_per_day, id: 'no-border' %>
-        </div>
+    </div>
+  </div>
+    <div class="row row-condensend space-4">
+      <div class="text-right col-sm-3">
+        <%= f.label :price_per_day %>
       </div>
-      <div class="row row-condensend space-4">
-        <div class="text-right col-sm-3">
-          <%= f.label :photo %>
-        </div>
-        <div class="text-left col-sm-9">
-          <%= f.file_field :photo, id: 'no-border' %>
-        </div>
+      <div class="text-left col-sm-9">
+        <%= f.text_field :price_per_day, id: 'no-border' %>
+      </div>
+    </div>
+    <div class="row row-condensend space-4">
+      <div class="text-right col-sm-3">
+        <%= f.label :photo %>
+      </div>
+      <div class="text-left col-sm-9">
+        <%= f.file_field :photo, id: 'no-border' %>
       </div>
     </div>
   </div>
   <div class="third-container">
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
+    <%= link_to 'Delete', flat_path(@flat) , method: :delete, data: { confirm: "Are you sure" }, class: 'btn btn-primary'%>
   </div>
 </div>
