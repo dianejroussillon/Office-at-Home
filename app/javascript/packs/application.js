@@ -9,7 +9,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import "../plugins/flatpickr";
 
-
 const searchBar = document.getElementById("search-input");
 const searchResult = document.getElementById("cards");
 const dynamicBanner = document.getElementById("banner-typed-text");
@@ -26,9 +25,11 @@ if (searchBar) {
  });
 }
 
+
 if(dynamicBanner) {
   loadDynamicBannerText();
 }
+
 
 if(endDate) {
   endDate.addEventListener("change", (event) => {
@@ -46,3 +47,4 @@ $(document).ready(function() {
  });
 });
 }
+
