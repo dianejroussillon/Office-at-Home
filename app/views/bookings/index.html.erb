@@ -1,6 +1,7 @@
 <div class="container">
   <div class="second-container">
     <h1>Bookings of <%= @flat.name %></h1>
+    <p>(<%= pluralize @flat.reviews.size, "review" %> associated)</p>
      <% @bookings.each do |booking| %>
       <div class="row row-condensed">
           <span class="text-left bookings"> from <%= booking.start_date %> to <%= booking.end_date %><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, flat_booking_path(@flat,booking), method: :delete, data: { confirm: "Are you sure" } %></span><span class="text-right bookings"><%= 'Reviews associated' %><%= link_to '<i class="fas fa-eye"></i>'.html_safe, flat_booking_reviews_path(@flat, booking) %> <%= link_to '<i class="fas fa-plus"></i>'.html_safe, new_flat_booking_review_path(@flat, booking) %></span>
