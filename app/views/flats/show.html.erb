@@ -1,6 +1,7 @@
 <div class="container">
   <div class="second-container">
     <h1><%= @flat.name.capitalize %></h1>
+    <p>(<%= pluralize @flat.reviews.size, "review" %> associated)</p>
     <div class="panel-body">
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
