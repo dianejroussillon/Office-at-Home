@@ -28,6 +28,7 @@
         </div>
       </div>
 
+<!-- fini   -->
     <div class="form-group string required flat_feature">
       <div class="row row-condensend space-4">
         <div class="text-right col-sm-3">
@@ -36,53 +37,66 @@
         </div>
         <div class="categories-choices text-left col-sm-9" id="no-border">
           <div class="form-group string required flat_feature" id="edit-category">
+
             <div class="col-sm-4 text-center" style="height: 88px;">
-                <label for="wifi" class="category-choice">Wi-fi</label>
-                <input type="checkbox" class="hidden" id="wifi" name="flat[wifi]" value="true">
+              <% teste = "category-choice #{@flat.wifi ? "active" : ""}"  %>
+              <%= f.label :wifi, :class => teste %>
+              <%= f.check_box :wifi, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="meeting-room" class="category-choice"> Meeting room</label>
-              <input type="checkbox" class="hidden" id="meeting-room" name="flat[meeting_room]" value="true">
+              <% teste = "category-choice #{@flat.meeting_room ? "active" : ""}"  %>
+              <%= f.label :meeting_room, :class => teste %>
+              <%= f.check_box :meeting_room, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="screen" class="category-choice">TV screen</label>
-              <input type="checkbox" class="hidden" id="screen" name="flat[screen]" value="true">
+              <% teste = "category-choice #{@flat.projector ? "active" : ""}"  %>
+              <%= f.label :projector, :class => teste %>
+              <%= f.check_box :projector, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="projector" class="category-choice">Projector</label>
-              <input type="checkbox" class="hidden" id="projector" name="flat[projector]" value="true">
+              <% teste = "category-choice #{@flat.screen ? "active" : ""}"  %>
+              <%= f.label :screen, :class => teste %>
+              <%= f.check_box :screen, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="speaker" class="category-choice">Loud speaker</label>
-              <input type="checkbox" class="hidden" id="speaker" name="flat[speaker]" value="true">
+              <% teste = "category-choice #{@flat.speaker ? "active" : ""}"  %>
+              <%= f.label :speaker, :class => teste %>
+              <%= f.check_box :speaker, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="games" class="category-choice">Video games</label>
-              <input type="checkbox" class="hidden" id="games" name="flat[games]" value="true">
+              <% teste = "category-choice #{@flat.games ? "active" : ""}"  %>
+              <%= f.label :games, :class => teste %>
+              <%= f.check_box :games, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="storage" class="category-choice">Storage</label>
-              <input type="checkbox" class="hidden" id="storage" name="flat[storage]" value="true">
+              <% teste = "category-choice #{@flat.storage ? "active" : ""}"  %>
+              <%= f.label :storage, :class => teste %>
+              <%= f.check_box :storage, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="coffee" class="category-choice">Coffee</label>
-              <input type="checkbox" class="hidden" id="coffee" name="flat[coffee]" value="true">
+              <% teste = "category-choice #{@flat.coffee ? "active" : ""}"  %>
+              <%= f.label :coffee, :class => teste %>
+              <%= f.check_box :coffee, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="fridge" class="category-choice">Fridge</label>
-              <input type="checkbox" class="hidden" id="fridge" name="flat[fridge]" value="true">
+              <% teste = "category-choice #{@flat.fridge ? "active" : ""}"  %>
+              <%= f.label :fridge, :class => teste %>
+              <%= f.check_box :fridge, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="teapot" class="category-choice">Teapot</label>
-              <input type="checkbox" class="hidden" id="teapot" name="flat[teapot]" value="true">
+              <% teste = "category-choice #{@flat.teapot ? "active" : ""}"  %>
+              <%= f.label :teapot, :class => teste %>
+              <%= f.check_box :teapot, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="kitchen" class="category-choice">Kitchen</label>
-              <input type="checkbox" class="hidden" id="kitchen" name="flat[kitchen]" value="true">
+              <% teste = "category-choice #{@flat.kitchen ? "active" : ""}"  %>
+              <%= f.label :kitchen, :class => teste %>
+              <%= f.check_box :kitchen, :class => "hidden" %>
             </div>
             <div class="col-sm-4 text-center" style="height: 88px;">
-              <label for="printer" class="category-choice">Printer</label>
-              <input type="checkbox" class="hidden" id="printer" name="flat[printer]" value="true">
+            <% teste = "category-choice #{@flat.printer ? "active" : ""}"  %>
+            <%= f.label :printer, :class => teste %>
+            <%= f.check_box :printer, :class => "hidden" %>
             </div>
           </div>
         </div>
