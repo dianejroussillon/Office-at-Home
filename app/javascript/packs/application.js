@@ -2,7 +2,6 @@ import "bootstrap";
 import $ from 'jquery';
 
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
@@ -10,31 +9,40 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import "../plugins/flatpickr";
 
-initMapbox();
-console.log('Hello World from Webpacker');
 
-const searchBar = document.getElementById("search-input")
-const searchResult = document.getElementById("cards")
+const searchBar = document.getElementById("search-input");
+const searchResult = document.getElementById("cards");
+const dynamicBanner = document.getElementById("banner-typed-text");
+const startDate = document.getElementById("booking_start_date");
+const endDate = document.getElementById("booking_end_date");
+const bookingPrice = document.getElementById("choice-category")
+
+initMapbox();
 
 if (searchBar) {
- searchBar.addEventListener('click', event => {
+ searchBar.addEventListener('submit', event => {
+  console.log("scroll");
    searchResult.scrollIntoView({ block: 'start',  behavior: 'smooth' });
  });
 }
 
-const startDate = document.getElementById("booking_start_date")
-const endDate = document.getElementById("booking_end_date")
+if(dynamicBanner) {
+  loadDynamicBannerText();
+}
 
-endDate.addEventListener("change", (event) => {
+if(endDate) {
+  endDate.addEventListener("change", (event) => {
   let dateDiffInMilliseconds = new Date(endDate.value) - new Date(startDate.value) + 86400000;
   let days = dateDiffInMilliseconds / 86400000;
   document.getElementById("days").innerText = `${days} jours`
   document.getElementById("price_per_day").innerText = `${(dateDiffInMilliseconds/ 86400000) * 75}€`
 });
+}
 
-// @(document).ready(function() {
-//  $(".category-choice").click(function() {
-//     $(this).toggleClass("active");
-//  });
-// });
-
+if (bookingPrice) {
+$(document).ready(function() {
+ $(".category-choice").click(function() {
+    $(this).toggleClass("active");
+ });
+});
+}
