@@ -25,7 +25,7 @@
 
 <div class="main-container" id="cards">
   <h1 style="font-size: 50px;">Choose the perfect flat</h1>
-  <div class="card-container">
+  <div class="card-container" id="card-container">
 
     <% @flats.each do |flat| %>
      <% if flat.photo.blank? %>
@@ -34,28 +34,26 @@
           <div class="col-sm-4">
             <%= link_to flat_path(flat), :class => "link" do %>
               <div class="card">
-
                 <div class ="card-image" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('https://picsum.photos/300/300/?random');">
-                   <i class="far fa-heart" data-cardSelectedfarfaheart></i>
+                   <i class="far fa-heart" ></i>
                 </div>
                   <div class="card-content"><% flat.name %>
                     <h5><%= flat.name %></h5>
                     <span class="text-left"><%= flat.address %></span>
                     <span class="text-right"><%= flat.price_per_day %><%= '€ /day' %></span>
                   </div>
-              <% end %>
+                <% end %>
             </div>
           </div>
         </div>
 
       <% else %>
-
+      <%= link_to flat_path(flat), :class => "link" do %>
         <div class ="row row-condensend">
           <div class="col-sm-4">
-            <%= link_to flat_path(flat), :class => "link" do %>
               <div class="card">
                 <div class ="card-image" style="background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('<%= cl_image_path flat.photo %>');">
-                <i class="far fa-heart" data-cardSelectedfarfaheart></i>
+                <i class="far fa-heart"></i>
                 </div>
                 <div class="card-content"><% flat.name %>
                   <h5><%= flat.name %></h5>

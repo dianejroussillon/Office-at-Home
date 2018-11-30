@@ -98,13 +98,18 @@ span.text-right {
   color: #D7B836;
 }
 
- .far.fa-heart {
+.far.fa-heart {
     padding: 1rem;
     color: white ;
-    text-align: right !important;
     z-index: 300;
     font-size: 24px;
+    &.heart-active {
+      color: red ;
+      opacity: 1;
+      z-index: 300;
+    }
   }
+
 
 
 
