@@ -3,7 +3,6 @@ import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
-
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
@@ -12,6 +11,7 @@ import "../plugins/flatpickr";
 
 initMapbox();
 console.log('Hello World from Webpacker');
+
 
 const searchBar = document.getElementById("search-input")
 const searchResult = document.getElementById("cards")
@@ -32,4 +32,7 @@ endDate.addEventListener("change", (event) => {
   document.getElementById("days").innerText = `${days} jours`
   document.getElementById("price_per_day").innerText = `${(dateDiffInMilliseconds/ 86400000) * 75}€`
 });
+
+
+
 
