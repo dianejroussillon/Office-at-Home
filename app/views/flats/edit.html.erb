@@ -108,7 +108,7 @@
   </div>
   <div class="third-container">
       <%= f.submit class: 'btn btn-primary' %>
-      <%= link_to 'Delete', edit_flat_path(@flat), method: :delete, data: { confirm: "Are you sure" }, class: 'btn btn-primary' %>
     <% end %>
+    <%= link_to 'Delete', flat_path(@flat) , method: :delete, data: { confirm: "Are you sure" }, class: 'btn btn-primary'%>
   </div>
 </div>
