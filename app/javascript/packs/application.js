@@ -15,8 +15,9 @@ const dynamicBanner = document.getElementById("banner-typed-text");
 const startDate = document.getElementById("booking_start_date");
 const endDate = document.getElementById("booking_end_date");
 const bookingPrice = document.getElementById("choice-category");
-const heartActive = document.getElementById("card-container")
- console.log(heartActive);
+const heartActive = document.getElementById("card-container");
+const heartNone = document.getElementById("card-container")
+
 initMapbox();
 
 
@@ -55,7 +56,7 @@ if (heartActive) {
   $(document).ready(function() {
     $(".card-image").click(function() {
       if(event.target.className == "far fa-heart") {
-        console.log(event.target.className == "far fa-heart");
+        // console.log(event.target.className == "far fa-heart");
         event.preventDefault();
       }
     });
@@ -64,4 +65,5 @@ if (heartActive) {
     });
   });
 }
+
 
