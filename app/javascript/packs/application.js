@@ -1,4 +1,5 @@
 import "bootstrap";
+import $ from 'jquery';
 
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
@@ -31,5 +32,9 @@ endDate.addEventListener("change", (event) => {
   document.getElementById("price_per_day").innerText = `${(dateDiffInMilliseconds/ 86400000) * 75}€`
 });
 
-
+// @(document).ready(function() {
+//  $(".category-choice").click(function() {
+//     $(this).toggleClass("active");
+//  });
+// });
 
