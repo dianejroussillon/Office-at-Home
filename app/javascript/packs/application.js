@@ -16,7 +16,6 @@ const startDate = document.getElementById("booking_start_date");
 const endDate = document.getElementById("booking_end_date");
 const bookingPrice = document.getElementById("choice-category");
 const heartActive = document.getElementById("card-container");
-const heartNone = document.getElementById("card-container")
 
 initMapbox();
 
