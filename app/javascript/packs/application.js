@@ -14,7 +14,8 @@ const searchResult = document.getElementById("cards");
 const dynamicBanner = document.getElementById("banner-typed-text");
 const startDate = document.getElementById("booking_start_date");
 const endDate = document.getElementById("booking_end_date");
-const bookingPrice = document.getElementById("choice-category");
+const choiceCategory = document.getElementById("choice-category")
+const editCategory = document.getElementById("edit-category") //class à rajotuer dans edit
 const heartActive = document.getElementById("card-container")
  console.log(heartActive);
 initMapbox();
@@ -43,7 +44,7 @@ if(endDate) {
 }
 
 
-if (bookingPrice) {
+if (choiceCategory || editCategory) {
 $(document).ready(function() {
  $(".category-choice").click(function() {
     $(this).toggleClass("active");
