@@ -35,7 +35,8 @@ class FlatsController < ApplicationController
   end
 
   def create
-    @flat = Flat.new(flat_params)
+    p Flat.new
+    p @flat = Flat.new(flat_params)
     @flat.user = current_user
     authorize @flat
     if @flat.valid?
