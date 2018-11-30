@@ -10,11 +10,20 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import "../plugins/flatpickr";
 
 
-<<<<<<< HEAD
-//recuperer le prix unitaire
+initMapbox();
+console.log('Hello World from Webpacker');
+
+const searchBar = document.getElementById("search-input")
+const searchResult = document.getElementById("cards")
+
+if (searchBar) {
+ searchBar.addEventListener('click', event => {
+   searchResult.scrollIntoView({ block: 'start',  behavior: 'smooth' });
+ });
+}
+
 
 const startDate = document.getElementById("booking_start_date")
-
 const endDate = document.getElementById("booking_end_date")
 
 endDate.addEventListener("change", (event) => {
@@ -23,33 +32,3 @@ endDate.addEventListener("change", (event) => {
   document.getElementById("days").innerText = `${days} jours`
   document.getElementById("price_per_day").innerText = `${(dateDiffInMilliseconds/ 86400000) * 75}€`
 });
-
-
-
-// Je recupere la date1
-// const dates = document.getElementsByClassName("form-control string optional datepicker flatpickr-input")
-// console.log(dates[0].value)
-
-
-
-// je recupere la date 2 et tu cree un objet Date avec JS
-
-
-// On soustrait la date 2 - date 1 + 1 multiplier par price perday
-
-
-
-// on affiche
-=======
-initMapbox();
-console.log('Hello World from Webpacker');
-
-const searchBar = document.getElementById("search-input")
-const searchResult = document.getElementById("cards")
-
-if (searchBar) {
-  searchBar.addEventListener('click', event => {
-    searchResult.scrollIntoView({ block: 'start',  behavior: 'smooth' });
-  })
-}
->>>>>>> adf4ea842367d3468cf04c9661a45dec74e4bbdb

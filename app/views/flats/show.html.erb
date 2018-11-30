@@ -6,7 +6,7 @@
         <div class="text-right col-sm-3">
           <p><strong>Address</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border">
+        <div class="text-left col-sm-9" id="no-border" style="padding-left: 38px;">
           <p> <%= @flat.address %></p>
         </div>
       </div>
@@ -15,7 +15,7 @@
         <div class="text-right col-sm-3">
           <p><strong>Description</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border">
+        <div class="text-left col-sm-9" id="no-border" style="padding-left: 38px;">
           <p> <%= @flat.description %> </p>
         </div>
       </div>
@@ -26,41 +26,70 @@
         </div>
         <div class="text-left col-sm-9" id="no-border">
           <% if @flat.wifi %>
-            <i class="fas fa-wifi"></i>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-wifi"></i>
               <p> Wifi</p>
+          </div>
             <% end %>
             <% if @flat.meeting_room %>
-              <p> Salle de réunion </p>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-briefcase"></i>
+              <p> Meeting-room </p>
+          </div>
             <% end %>
             <% if @flat.projector %>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-video"></i>
               <p> Projector </p>
+          </div>
             <% end %>
             <% if @flat.screen %>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-tv"></i>
               <p> TV Screen </p>
+          </div>
             <% end %>
             <% if @flat.speaker %>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-volume-up"></i>
               <p> Loud speaker </p>
+          </div>
             <% end %>
             <% if @flat.games %>
-            <i class="fas fa-gamepad"></i>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-dice-six"></i>
               <p> Video games </p>
+          </div>
             <% end %>
             <% if @flat.storage %>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-archive"></i>
               <p> Place for storage </p>
+          </div>
             <% end %>
             <% if @flat.coffee %>
-            <i class="fas fa-coffee"></i>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-coffee"></i>
               <p> Coffee machine</p>
+          </div>
             <% end %>
             <% if @flat.teapot %>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-leaf"></i>
               <p> Teapot </p>
+          </div>
             <% end %>
             <% if @flat.kitchen %>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+              <i class="fas fa-utensils"></i>
               <p> Kitchen </p>
+          </div>
             <% end %>
             <% if @flat.printer %>
-            <i class="fas fa-print"></i>
+          <div class="col-sm-4 text-center" style="height: 88px;">
+             <i class="fas fa-print"></i>
               <p> Printer </p>
+          </div>
             <% end %>
         </div>
       </div>
@@ -69,7 +98,7 @@
         <div class="text-right col-sm-3">
           <p><strong>Price</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border">
+        <div class="text-left col-sm-9" id="no-border" style="padding-left: 38px;">
           <p> <%= @flat.price_per_day %> <%= '€' %> </p>
         </div>
       </div>
@@ -78,7 +107,7 @@
         <div class="text-right col-sm-3">
           <p><strong>Reviews</strong></p>
         </div>
-        <div class="text-left col-sm-9" id="no-border">
+        <div class="text-left col-sm-9" id="no-border" style="padding-left: 38px;">
             <% @flat.reviews.each do |review| %>
         <div class="row-condensed">
           <span><em>"<%= review.content %>"</em></span><span id="stars"><%= '☆'*review.rating %></span>
