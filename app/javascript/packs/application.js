@@ -33,6 +33,3 @@ endDate.addEventListener("change", (event) => {
   document.getElementById("price_per_day").innerText = `${(dateDiffInMilliseconds/ 86400000) * 75}€`
 });
 
-
-
-

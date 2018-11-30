@@ -31,7 +31,7 @@
               <div class="card">
 
                 <div class ="card-image" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('https://picsum.photos/300/300/?random');">
-                   <i class="far fa-heart" data-cardSelectedfarfaheart></i>
+                   <i class="far fa-heart" id ="favorite" style="display:block;" ></i>
                 </div>
                   <div class="card-content"><% flat.name %>
                     <h5><%= flat.name %></h5>
@@ -50,7 +50,7 @@
             <%= link_to flat_path(flat), :class => "link" do %>
               <div class="card">
                 <div class ="card-image" style="background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('<%= cl_image_path flat.photo %>');">
-                <i class="far fa-heart" data-cardSelectedfarfaheart></i>
+                <i class="far fa-heart" data-cardSelectedfarfaheart id="favorite"></i>
                 </div>
                 <div class="card-content"><% flat.name %>
                   <h5><%= flat.name %></h5>
