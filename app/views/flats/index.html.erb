@@ -1,3 +1,4 @@
+<%   unless params[:query].present? %>
 <div class="banner">
     <div class="banner-content" id="banner-id">
       <h1>Discover new places to work<br>amongst thousands of homes</h1>
@@ -17,6 +18,10 @@
       </div>
     </div>
   </div>
+  <% else %>
+          <%= render 'shared/navbar2' %>
+<% end %>
+
 
 <div class="main-container" id="cards">
   <h1 style="font-size: 50px;">Choose the perfect flat</h1>
