@@ -31,6 +31,7 @@
                 <div class ="card-image" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 80%), url('https://picsum.photos/300/300/?random');">
                    <i class="far fa-heart" ></i>
                 </div>
+
                 <div class="card-content"><% flat.name %>
                 <%= link_to flat_path(flat), :class => "link" do %>
                   <h5><%= flat.name %></h5>
@@ -51,11 +52,13 @@
                 <i class="far fa-heart"></i>
                 </div>
                 <div class="card-content"><% flat.name %>
+
                   <%= link_to flat_path(flat), :class => "link" do %>
                     <h5><%= flat.name %></h5>
                   <% end %>
                   <span class="text-left"><%= flat.address %></span>
                   <span class="text-right"><%= flat.price_per_day %><%= '€ /day' %></span>
+
                 </div>
               </div>
             </div>
