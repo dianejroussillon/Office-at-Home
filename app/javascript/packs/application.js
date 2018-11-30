@@ -14,8 +14,9 @@ const searchResult = document.getElementById("cards");
 const dynamicBanner = document.getElementById("banner-typed-text");
 const startDate = document.getElementById("booking_start_date");
 const endDate = document.getElementById("booking_end_date");
-const bookingPrice = document.getElementById("choice-category")
-
+const bookingPrice = document.getElementById("choice-category");
+const heartActive = document.getElementById("card-container")
+ console.log(heartActive);
 initMapbox();
 
 
@@ -48,5 +49,19 @@ $(document).ready(function() {
     $(this).toggleClass("active");
  });
 });
+}
+
+if (heartActive) {
+  $(document).ready(function() {
+    $(".card-image").click(function() {
+      if(event.target.className == "far fa-heart") {
+        console.log(event.target.className == "far fa-heart");
+        event.preventDefault();
+      }
+    });
+    $("#card-container").click(function() {
+      $(event.target).toggleClass("heart-active");
+    });
+  });
 }
 
