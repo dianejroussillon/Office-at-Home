@@ -9,6 +9,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import "../plugins/flatpickr";
 
+initMapbox();
+console.log('Hello World from Webpacker');
+
 const startDate = document.getElementById("booking_start_date")
 const endDate = document.getElementById("booking_end_date")
 
@@ -19,8 +22,6 @@ endDate.addEventListener("change", (event) => {
   document.getElementById("price_per_day").innerText = `${(dateDiffInMilliseconds/ 86400000) * 75}€`
 });
 
-initMapbox();
-console.log('Hello World from Webpacker');
 
 const searchBar = document.getElementById("search-input")
 const searchResult = document.getElementById("cards")
